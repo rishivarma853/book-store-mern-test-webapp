@@ -1,11 +1,11 @@
 
-import express from "express";
+import express, {Express} from "express";
 import GetRoute from "./routes/getRoute.js";
 import Config from "./config.js";
 
 export default class Server
 {
-    public static readonly app = express();
+    public static readonly app: Express = <Express> express() as Express;
     public static run(): void
     {
         this.app.use(express.json());
